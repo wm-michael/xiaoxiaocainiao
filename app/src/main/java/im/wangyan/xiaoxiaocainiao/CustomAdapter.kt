@@ -24,8 +24,10 @@ class CustomAdapter(private val dataSet: Array<String>) : RecyclerView.Adapter<C
     }
 
     override fun onBindViewHolder(viewHolder: ViewHolder, position: Int) {
+
         val tv = viewHolder.tv
         tv.text = dataSet[position]
+        tv.setBackgroundResource(R.drawable.selector_item_background);
 
         tv.setOnClickListener {
             onItemClickListener?.onItemClick(tv, position)
