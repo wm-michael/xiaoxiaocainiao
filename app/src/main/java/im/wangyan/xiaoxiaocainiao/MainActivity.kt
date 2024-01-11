@@ -7,6 +7,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import im.wangyan.module_retrofit.Retrofit2.Retrofit2Activity
 
 
 class MainActivity : AppCompatActivity() {
@@ -29,6 +30,11 @@ class MainActivity : AppCompatActivity() {
 
                     1 -> {
                         val intent = Intent(baseContext, im.wangyan.module_retrofit.Retrofit0Activity::class.java)
+                        startActivity(intent)
+                    }
+
+                    2 -> {
+                        val intent = Intent(baseContext, Retrofit2Activity::class.java)
                         startActivity(intent)
                     }
                 }
