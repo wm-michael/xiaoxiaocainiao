@@ -38,6 +38,7 @@ android {
 dependencies {
 
     implementation(project(":module-retrofit"))
+    implementation(project(":module-room"))
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)

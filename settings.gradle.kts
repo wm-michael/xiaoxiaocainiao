@@ -25,3 +25,5 @@ rootProject.name = "XiaoXiaoCaiNiao"
 include(":app")
 include(":lib-network")
 include(":module-retrofit")
+include(":lib-room")
+include(":module-room")
