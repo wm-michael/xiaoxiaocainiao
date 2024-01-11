@@ -14,7 +14,7 @@ import kotlinx.coroutines.launch
 class Retrofit0Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_retrofit2)
+        setContentView(R.layout.activity_retrofit0)
 
         val service = Network.getRetrofit().create(MovieService::class.java)
 
@@ -24,10 +24,10 @@ class Retrofit0Activity : AppCompatActivity() {
         mybtn.setOnClickListener {
             Log.d("XIAOXIAO", "button clicked.")
             lifecycleScope.launch {
-                val abc = service.getPopularMovie(1)
+                val abc = service.getPopularMovie_Suspend(1)
                 Log.d("XIAOXIAO", abc.toString())
                 Log.d("XIAOXIAO", "count: $abc.results.size")
-                tv.text = abc.toString() + "\n" + "count: " + abc.results.size.toString()
+                tv.text = "count: " + abc.results.size.toString() + "\n" + abc.toString()
 
             }
         }

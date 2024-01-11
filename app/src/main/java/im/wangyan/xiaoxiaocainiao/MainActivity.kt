@@ -23,7 +23,8 @@ class MainActivity : AppCompatActivity() {
 
                 when(position) {
                     0 -> {
-
+                        val intent = Intent(baseContext, im.wangyan.module_retrofit.Retrofit1Activity::class.java)
+                        startActivity(intent)
                     }
 
                     1 -> {
@@ -35,7 +36,7 @@ class MainActivity : AppCompatActivity() {
         })
 
         val rv = findViewById<RecyclerView>(R.id.rv)
-        rv.setLayoutManager(LinearLayoutManager(this));
+        rv.layoutManager = LinearLayoutManager(this)
         rv.adapter = customAdapter
 
     }
