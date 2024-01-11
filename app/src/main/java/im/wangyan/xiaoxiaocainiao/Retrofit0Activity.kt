@@ -2,6 +2,7 @@ package im.wangyan.xiaoxiaocainiao
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.text.method.ScrollingMovementMethod
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
@@ -19,6 +20,7 @@ class Retrofit0Activity : AppCompatActivity() {
 
         val mybtn =  findViewById<Button>(R.id.mybtn)
         val tv =  findViewById<TextView>(R.id.tv)
+        tv.setMovementMethod(ScrollingMovementMethod.getInstance());
         mybtn.setOnClickListener {
             Log.d("XIAOXIAO", "button clicked.")
             lifecycleScope.launch {
