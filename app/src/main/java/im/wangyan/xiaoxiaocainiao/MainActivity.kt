@@ -27,7 +27,7 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     1 -> {
-                        val intent = Intent(baseContext, Retrofit0Activity::class.java)
+                        val intent = Intent(baseContext, im.wangyan.module_retrofit.Retrofit0Activity::class.java)
                         startActivity(intent)
                     }
                 }

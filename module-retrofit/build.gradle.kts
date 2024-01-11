@@ -1,20 +1,18 @@
+@Suppress("DSL_SCOPE_VIOLATION") // TODO: Remove once KTIJ-19369 is fixed
 plugins {
-    id("com.android.application")
-    id("org.jetbrains.kotlin.android")
+    alias(libs.plugins.androidLibrary)
+    alias(libs.plugins.kotlinAndroid)
 }
 
 android {
-    namespace = "im.wangyan.xiaoxiaocainiao"
+    namespace = "im.wangyan.module_retrofit"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "im.wangyan.xiaoxiaocainiao"
         minSdk = 24
-        targetSdk = 34
-        versionCode = 1
-        versionName = "1.0"
 
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles("consumer-rules.pro")
     }
 
     buildTypes {
@@ -37,11 +35,16 @@ android {
 
 dependencies {
 
-    implementation(project(":module-retrofit"))
+    implementation(project(":lib-network"))
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
     testImplementation(libs.junit.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso)
+
+    implementation(libs.squareup.retrofit2)
+    implementation(libs.squareup.converterGson)
+    implementation(libs.squareup.okhttp3)
+    implementation(libs.squareup.loggingInterceptor)
 }

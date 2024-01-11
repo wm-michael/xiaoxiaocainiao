@@ -23,4 +23,5 @@ dependencyResolutionManagement {
 
 rootProject.name = "XiaoXiaoCaiNiao"
 include(":app")
-include(":network")
+include(":lib-network")
+include(":module-retrofit")
