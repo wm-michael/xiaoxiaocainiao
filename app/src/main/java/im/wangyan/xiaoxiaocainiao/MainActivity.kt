@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import im.wangyan.module_retrofit.Retrofit2.Retrofit2Activity
+import im.wangyan.module_retrofit.Retrofit3.Retrofit3Activity
 
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val dataset = arrayOf("retrofit-call", "retrofit-suspend", "retrofit-flow")
+        val dataset = arrayOf("retrofit-call", "retrofit-suspend", "retrofit-flow", "retrofit-flow-result")
         val customAdapter = CustomAdapter(dataset)
         customAdapter.setOnItemClickListener(object : CustomAdapter.OnItemClickListener {
             override fun onItemClick(view: View, position: Int) {
@@ -35,6 +36,11 @@ class MainActivity : AppCompatActivity() {
 
                     2 -> {
                         val intent = Intent(baseContext, Retrofit2Activity::class.java)
+                        startActivity(intent)
+                    }
+
+                    3 -> {
+                        val intent = Intent(baseContext, Retrofit3Activity::class.java)
                         startActivity(intent)
                     }
                 }
