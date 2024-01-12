@@ -33,7 +33,8 @@ class Room1Activity : AppCompatActivity() {
         }
 
         binding.btnQuery.setOnClickListener {
-            viewModel.fetchUsers()
+            binding.tv.text = "loading ... ... "
+            viewModel.fetchUsers2()
         }
     }
 }
