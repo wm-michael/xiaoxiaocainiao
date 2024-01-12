@@ -1,4 +1,4 @@
-package im.wangyan.module_room
+package im.wangyan.module_room.demo0
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -8,18 +8,19 @@ import android.widget.TextView
 import androidx.cardview.widget.CardView
 import androidx.recyclerview.widget.RecyclerView
 import im.wangyan.lib_room.Todo
+import im.wangyan.module_room.R
 
 class TodoAdapter(private val context: Context, val listener: TodoClickListener):
     RecyclerView.Adapter<TodoAdapter.TodoViewHolder>(){
 
     private val todoList = ArrayList<Todo>()
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoAdapter.TodoViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): TodoViewHolder {
         return TodoViewHolder(
             LayoutInflater.from(context).inflate(R.layout.list_item, parent, false)
         )
     }
 
-    override fun onBindViewHolder(holder: TodoAdapter.TodoViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: TodoViewHolder, position: Int) {
         val item = todoList[position]
         holder.title.text = item.title
         holder.title.isSelected = true

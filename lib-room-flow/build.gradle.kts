@@ -2,10 +2,11 @@
 plugins {
     alias(libs.plugins.androidLibrary)
     alias(libs.plugins.kotlinAndroid)
+    id("com.google.devtools.ksp")
 }
 
 android {
-    namespace = "im.wangyan.module_room"
+    namespace = "im.wangyan.lib_room_flow"
     compileSdk = 34
 
     defaultConfig {
@@ -31,25 +32,18 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
-
-    buildFeatures {
-        viewBinding = true
-    }
 }
 
 dependencies {
 
-    implementation(project(":lib-room"))
-    implementation(project(":lib-room-flow"))
-
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
-
-    implementation(libs.lifecycle.viewmodelKtx)
-
-    implementation(libs.constraintlayout)
     testImplementation(libs.junit.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso)
+
+    implementation(libs.androidx.roomKtx)
+    api(libs.androidx.roomRuntime)
+    ksp(libs.androidx.roomCompiler)
 }

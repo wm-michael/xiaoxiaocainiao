@@ -1,4 +1,4 @@
-package im.wangyan.module_room
+package im.wangyan.module_room.demo0
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
