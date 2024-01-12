@@ -1,5 +1,6 @@
 package im.wangyan.xiaoxiaocainiao
 
+import android.annotation.SuppressLint
 import android.content.Intent
 import android.os.Bundle
 import android.util.Log
@@ -16,6 +17,7 @@ import im.wangyan.module_room.demo1.Room1Activity
 
 class MainActivity : AppCompatActivity() {
 
+    @SuppressLint("UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
@@ -66,12 +68,8 @@ class MainActivity : AppCompatActivity() {
         rv.layoutManager = layoutManager
         rv.adapter = customAdapter
 
-        rv.addItemDecoration(
-            DividerItemDecoration(
-                baseContext,
-                layoutManager.orientation
-            )
-        )
-
+        val itemDecoration = DividerItemDecoration(this, DividerItemDecoration.VERTICAL)
+        itemDecoration.setDrawable(getDrawable(R.drawable.divider)!!)
+        rv.addItemDecoration(itemDecoration)
     }
 }
