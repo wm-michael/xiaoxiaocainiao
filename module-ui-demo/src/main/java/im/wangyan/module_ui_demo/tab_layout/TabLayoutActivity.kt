@@ -26,9 +26,9 @@ import com.google.android.material.tabs.TabLayoutMediator
 import im.wangyan.module_ui_demo.BaseActivity
 import im.wangyan.module_ui_demo.R
 import im.wangyan.module_ui_demo.databinding.ActivityTabLayoutBinding
-import im.wangyan.module_ui_demo.tab_layout.fragments.Fragment1
-import im.wangyan.module_ui_demo.tab_layout.fragments.Fragment2
-import im.wangyan.module_ui_demo.tab_layout.fragments.Fragment3
+import im.wangyan.module_ui_demo.fragments.Fragment1
+import im.wangyan.module_ui_demo.fragments.Fragment2
+import im.wangyan.module_ui_demo.fragments.Fragment3
 
 class TabLayoutActivity : BaseActivity<ActivityTabLayoutBinding>() {
 

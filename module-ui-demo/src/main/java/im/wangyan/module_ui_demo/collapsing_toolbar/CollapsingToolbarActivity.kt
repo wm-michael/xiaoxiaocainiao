@@ -1,5 +1,6 @@
 package im.wangyan.module_ui_demo.collapsing_toolbar
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -42,7 +43,7 @@ class CollapsingToolbarActivity : AppCompatActivity() {
                 true
             }
             R.id.action_settings -> {
-                //startActivity(Intent(this@CollapsingToolbarActivity, TabViewPagerScrollActivity::class.java))
+                startActivity(Intent(this@CollapsingToolbarActivity, TabViewPagerScrollActivity::class.java))
                 true
             }
             else -> super.onOptionsItemSelected(item)

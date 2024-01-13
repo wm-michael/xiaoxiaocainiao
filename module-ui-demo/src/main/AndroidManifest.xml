@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".collapsing_toolbar.TabViewPagerScrollActivity"
+            android:exported="false" />
+        <activity
             android:name=".collapsing_toolbar.CollapsingToolbarActivity"
             android:exported="false" />
         <activity

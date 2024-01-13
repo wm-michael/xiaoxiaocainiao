@@ -1,4 +1,4 @@
-package im.wangyan.module_ui_demo.tab_layout.fragments
+package im.wangyan.module_ui_demo.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
