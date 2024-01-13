@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import im.wangyan.module_ui_demo.databinding.ActivityUidemoBinding
+import im.wangyan.module_ui_demo.snackbar.SnackbarActivity
 import im.wangyan.module_ui_demo.swipe_refresh_layout.SwipeRefreshLayoutActivity
 
 class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
@@ -33,7 +34,6 @@ class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
         invalidateOptionsMenu()
         mList = mutableListOf(
             getString(R.string.swipe_refresh_layout),
-            getString(R.string.floating_action_button),
             getString(R.string.snack_bar),
             getString(R.string.tab_layout),
             getString(R.string.card_view),
@@ -82,6 +82,7 @@ class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
             override fun onItemClick(v: View, position: Int) {
                 when(position) {
                     0 -> openActivity(SwipeRefreshLayoutActivity::class.java)
+                    1 -> openActivity(SnackbarActivity::class.java)
                 }
             }
         })
