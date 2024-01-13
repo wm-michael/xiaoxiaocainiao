@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatDelegate
 import im.wangyan.module_ui_demo.databinding.ActivityUidemoBinding
 import im.wangyan.module_ui_demo.snackbar.SnackbarActivity
 import im.wangyan.module_ui_demo.swipe_refresh_layout.SwipeRefreshLayoutActivity
+import im.wangyan.module_ui_demo.tab_layout.TabLayoutActivity
 
 class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
 
@@ -83,6 +84,7 @@ class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
                 when(position) {
                     0 -> openActivity(SwipeRefreshLayoutActivity::class.java)
                     1 -> openActivity(SnackbarActivity::class.java)
+                    2 -> openActivity(TabLayoutActivity::class.java)
                 }
             }
         })
