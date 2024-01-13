@@ -8,6 +8,7 @@ import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import im.wangyan.module_ui_demo.bottom_navigation.BottomNavigationActivity
 import im.wangyan.module_ui_demo.cardview.CardViewActivity
+import im.wangyan.module_ui_demo.collapsing_toolbar.CollapsingToolbarActivity
 import im.wangyan.module_ui_demo.databinding.ActivityUidemoBinding
 import im.wangyan.module_ui_demo.snackbar.SnackbarActivity
 import im.wangyan.module_ui_demo.swipe_refresh_layout.SwipeRefreshLayoutActivity
@@ -89,6 +90,7 @@ class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
                     2 -> openActivity(TabLayoutActivity::class.java)
                     3 -> openActivity(CardViewActivity::class.java)
                     4 -> openActivity(BottomNavigationActivity::class.java)
+                    5 -> openActivity(CollapsingToolbarActivity::class.java)
                 }
             }
         })
