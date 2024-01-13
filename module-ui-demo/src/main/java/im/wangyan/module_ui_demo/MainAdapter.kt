@@ -20,7 +20,7 @@ class MainAdapter(private val mContext: Context, private val mList: List<String>
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         // 去掉随机背景色，跟随系统dynamic color
-//        holder.mItemTextView.setBackgroundColor(randomColor())
+        holder.mItemTextView.setBackgroundColor(randomColor())
         holder.mItemTextView.text = mList[position]
         holder.mItemTextView.tag = position
     }
