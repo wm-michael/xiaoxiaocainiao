@@ -25,6 +25,9 @@ constraintlayout = "2.1.4"
 lifecycleViewmodelKtx = "2.6.2"
 swiperefreshlayout = "1.1.0"
 
+#第三方库,不是官方的!!
+lottie = "5.0.1"
+
 [libraries]
 #core
 androidx-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "ktx" }
@@ -48,6 +51,9 @@ androidx-roomCompiler = {group = "androidx.room", name = "room-compiler", versio
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 lifecycle-viewmodelKtx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
 androidx-swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayout" }
+
+#第三方库,不是官方的!!
+airbnb-lottie = {group = "com.airbnb.android", name = "lottie", version.ref = "lottie"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "application" }

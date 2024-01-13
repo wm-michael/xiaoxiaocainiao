@@ -48,7 +48,8 @@
         app:tabMode="fixed"
         app:tabSelectedTextColor="@color/colorPrimary"
         app:tabTextAppearance="@style/MyTabLayout"
-        app:tabTextColor="@color/gray" />
+        app:tabTextColor="@color/gray"
+        app:tabIconTint="@drawable/your_color_selector"/>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout4"
@@ -60,7 +61,8 @@
         app:tabIndicatorFullWidth="false"
         app:tabMode="fixed"
         app:tabSelectedTextColor="@color/colorPrimary"
-        app:tabTextColor="@color/gray" />
+        app:tabTextColor="@color/gray"
+        app:tabIconTint="@drawable/your_color_selector"/>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout5"
@@ -72,7 +74,8 @@
         app:tabIndicatorFullWidth="false"
         app:tabMode="fixed"
         app:tabSelectedTextColor="@color/colorPrimary"
-        app:tabTextColor="@color/gray" />
+        app:tabTextColor="@color/gray"
+        app:tabIconTint="@drawable/your_color_selector"/>
 
     <com.google.android.material.tabs.TabLayout
         android:id="@+id/tab_layout6"
@@ -95,7 +98,8 @@
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical"
         android:layout_marginTop="10dp"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:background="@color/white">
 
         <com.google.android.material.tabs.TabLayout
             android:id="@+id/tab_layout7"
