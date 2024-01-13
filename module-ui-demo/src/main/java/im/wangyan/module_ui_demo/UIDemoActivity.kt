@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import im.wangyan.module_ui_demo.databinding.ActivityUidemoBinding
+import im.wangyan.module_ui_demo.swipe_refresh_layout.SwipeRefreshLayoutActivity
 
 class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
 
@@ -79,7 +80,9 @@ class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
     private fun setListener() {
         mAdapter.setOnItemClickListener(object : MainAdapter.OnItemClickListener {
             override fun onItemClick(v: View, position: Int) {
-
+                when(position) {
+                    0 -> openActivity(SwipeRefreshLayoutActivity::class.java)
+                }
             }
         })
 

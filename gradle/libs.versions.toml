@@ -23,6 +23,7 @@ room-compiler = "2.5.2"
 
 constraintlayout = "2.1.4"
 lifecycleViewmodelKtx = "2.6.2"
+swiperefreshlayout = "1.1.0"
 
 [libraries]
 #core
@@ -46,6 +47,7 @@ androidx-roomCompiler = {group = "androidx.room", name = "room-compiler", versio
 
 constraintlayout = { group = "androidx.constraintlayout", name = "constraintlayout", version.ref = "constraintlayout" }
 lifecycle-viewmodelKtx = { group = "androidx.lifecycle", name = "lifecycle-viewmodel-ktx", version.ref = "lifecycleViewmodelKtx" }
+androidx-swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "swiperefreshlayout", version.ref = "swiperefreshlayout" }
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "application" }
