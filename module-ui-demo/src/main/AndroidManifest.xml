@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".bottom_navigation.BottomNavigationActivity"
+            android:exported="false" />
+        <activity
             android:name=".cardview.CardViewActivity"
             android:exported="false" />
         <activity
