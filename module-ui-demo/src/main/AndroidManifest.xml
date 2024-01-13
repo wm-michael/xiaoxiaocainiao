@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".text_input_layout.TextInputLayoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".collapsing_toolbar.TabViewPagerScrollActivity"
             android:exported="false" />
         <activity

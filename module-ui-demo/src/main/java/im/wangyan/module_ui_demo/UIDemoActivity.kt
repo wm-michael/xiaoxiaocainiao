@@ -13,6 +13,7 @@ import im.wangyan.module_ui_demo.databinding.ActivityUidemoBinding
 import im.wangyan.module_ui_demo.snackbar.SnackbarActivity
 import im.wangyan.module_ui_demo.swipe_refresh_layout.SwipeRefreshLayoutActivity
 import im.wangyan.module_ui_demo.tab_layout.TabLayoutActivity
+import im.wangyan.module_ui_demo.text_input_layout.TextInputLayoutActivity
 
 class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
 
@@ -91,6 +92,7 @@ class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
                     3 -> openActivity(CardViewActivity::class.java)
                     4 -> openActivity(BottomNavigationActivity::class.java)
                     5 -> openActivity(CollapsingToolbarActivity::class.java)
+                    6 -> openActivity(TextInputLayoutActivity::class.java)
                 }
             }
         })
