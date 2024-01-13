@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
+import im.wangyan.module_ui_demo.cardview.CardViewActivity
 import im.wangyan.module_ui_demo.databinding.ActivityUidemoBinding
 import im.wangyan.module_ui_demo.snackbar.SnackbarActivity
 import im.wangyan.module_ui_demo.swipe_refresh_layout.SwipeRefreshLayoutActivity
@@ -85,6 +86,7 @@ class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
                     0 -> openActivity(SwipeRefreshLayoutActivity::class.java)
                     1 -> openActivity(SnackbarActivity::class.java)
                     2 -> openActivity(TabLayoutActivity::class.java)
+                    3 -> openActivity(CardViewActivity::class.java)
                 }
             }
         })

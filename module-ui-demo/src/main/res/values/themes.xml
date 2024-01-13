@@ -35,9 +35,15 @@
     <style name="BottomSheetDialog" parent="Theme.Design.Light.BottomSheetDialog">
         <item name="bottomSheetStyle">@style/bottomSheetStyleWrapper</item>
     </style>
-
     <style name="bottomSheetStyleWrapper" parent="Widget.Design.BottomSheet.Modal">
         <item name="android:background">@android:color/transparent</item>
+    </style>
+
+    <!--ShapeableImageView 左上左下 圆角 -->
+    <style name="LeftAndBottomStyle">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSizeTopLeft">10dp</item>
+        <item name="cornerSizeBottomLeft">10dp</item>
     </style>
 
 </resources>

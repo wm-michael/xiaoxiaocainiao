@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".cardview.CardViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".tab_layout.TabLayoutActivity"
             android:exported="false" />
         <activity
