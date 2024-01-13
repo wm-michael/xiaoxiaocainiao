@@ -40,6 +40,7 @@ dependencies {
 
     implementation(project(":module-retrofit"))
     implementation(project(":module-room"))
+    implementation(project(":module-ui-demo"))
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
