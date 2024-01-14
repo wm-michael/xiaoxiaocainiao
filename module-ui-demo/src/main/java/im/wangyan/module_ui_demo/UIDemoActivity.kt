@@ -7,6 +7,7 @@ import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
 import im.wangyan.module_ui_demo.bottom_navigation.BottomNavigationActivity
+import im.wangyan.module_ui_demo.bottomsheet.BottomSheetActivity
 import im.wangyan.module_ui_demo.cardview.CardViewActivity
 import im.wangyan.module_ui_demo.collapsing_toolbar.CollapsingToolbarActivity
 import im.wangyan.module_ui_demo.databinding.ActivityUidemoBinding
@@ -99,6 +100,7 @@ class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
                     7 -> openActivity(SearchViewActivity::class.java)
                     8 -> openActivity(TabLayoutCustomViewActivity::class.java)
                     9 -> openActivity(DrawerLayoutActivity::class.java)
+                    10 -> openActivity(BottomSheetActivity::class.java)
                 }
             }
         })
