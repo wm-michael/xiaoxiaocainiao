@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".materialbutton.MaterialButtonActivity"
+            android:exported="false" />
+        <activity
             android:name=".bottomsheet.BottomSheetActivity"
             android:exported="false" />
         <activity
