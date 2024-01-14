@@ -11,6 +11,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import im.wangyan.module_retrofit.Retrofit2.Retrofit2Activity
 import im.wangyan.module_retrofit.Retrofit3.Retrofit3Activity
+import im.wangyan.module_retrofit.Retrofit4.Retrofit4Activity
 import im.wangyan.module_room.demo0.Room0Activity
 import im.wangyan.module_room.demo1.Room1Activity
 import im.wangyan.module_ui_demo.UIDemoActivity
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val ui_demos_list = arrayOf("ui demo")
-        val retrofit_list = arrayOf("retrofit-call", "retrofit-suspend", "retrofit-flow", "retrofit-flow-result")
+        val retrofit_list = arrayOf("retrofit-call", "retrofit-suspend", "retrofit-flow", "retrofit-flow-result", "retrofit-gson-convert")
         val room_list = arrayOf("room-suspend", "room-flow")
         val dataset = retrofit_list + room_list + ui_demos_list
         val customAdapter = CustomAdapter(dataset)
@@ -54,16 +55,21 @@ class MainActivity : AppCompatActivity() {
                     }
 
                     4 -> {
-                        val intent = Intent(baseContext, Room0Activity::class.java)
+                        val intent = Intent(baseContext, Retrofit4Activity::class.java)
                         startActivity(intent)
                     }
 
                     5 -> {
-                        val intent = Intent(baseContext, Room1Activity::class.java)
+                        val intent = Intent(baseContext, Room0Activity::class.java)
                         startActivity(intent)
                     }
 
                     6 -> {
+                        val intent = Intent(baseContext, Room1Activity::class.java)
+                        startActivity(intent)
+                    }
+
+                    7 -> {
                         val intent = Intent(baseContext, UIDemoActivity::class.java)
                         startActivity(intent)
                     }
