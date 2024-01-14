@@ -14,6 +14,7 @@ import im.wangyan.module_ui_demo.collapsing_toolbar.CollapsingToolbarActivity
 import im.wangyan.module_ui_demo.databinding.ActivityUidemoBinding
 import im.wangyan.module_ui_demo.dragrecyclerview.DragRecyclerViewActivity
 import im.wangyan.module_ui_demo.drawer_layout.DrawerLayoutActivity
+import im.wangyan.module_ui_demo.dynamic_layout.DynamicLayoutActivity
 import im.wangyan.module_ui_demo.floatview.FloatViewActivity
 import im.wangyan.module_ui_demo.guideline.GuideLineActivity
 import im.wangyan.module_ui_demo.layout_divider.DividerActivity
@@ -117,6 +118,7 @@ class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
                     16 -> openActivity(FloatViewActivity::class.java)
                     17 -> openActivity(GuideLineActivity::class.java)
                     18 -> openActivity(DividerActivity::class.java)
+                    19 -> openActivity(DynamicLayoutActivity::class.java)
                 }
             }
         })

@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".dynamic_layout.DynamicLayoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".layout_divider.DividerActivity"
             android:exported="false" />
         <activity
