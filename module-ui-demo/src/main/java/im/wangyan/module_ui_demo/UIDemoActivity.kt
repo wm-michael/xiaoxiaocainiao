@@ -10,6 +10,7 @@ import im.wangyan.module_ui_demo.bottom_navigation.BottomNavigationActivity
 import im.wangyan.module_ui_demo.cardview.CardViewActivity
 import im.wangyan.module_ui_demo.collapsing_toolbar.CollapsingToolbarActivity
 import im.wangyan.module_ui_demo.databinding.ActivityUidemoBinding
+import im.wangyan.module_ui_demo.drawer_layout.DrawerLayoutActivity
 import im.wangyan.module_ui_demo.searchview.SearchViewActivity
 import im.wangyan.module_ui_demo.snackbar.SnackbarActivity
 import im.wangyan.module_ui_demo.swipe_refresh_layout.SwipeRefreshLayoutActivity
@@ -97,6 +98,7 @@ class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
                     6 -> openActivity(TextInputLayoutActivity::class.java)
                     7 -> openActivity(SearchViewActivity::class.java)
                     8 -> openActivity(TabLayoutCustomViewActivity::class.java)
+                    9 -> openActivity(DrawerLayoutActivity::class.java)
                 }
             }
         })

@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".drawer_layout.DrawerLayoutActivity"
+            android:exported="false" />
+        <activity
             android:name=".tablayout_customview.TabLayoutCustomViewActivity"
             android:exported="false" />
         <activity
