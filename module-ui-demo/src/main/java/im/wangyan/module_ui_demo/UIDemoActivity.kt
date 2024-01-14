@@ -14,6 +14,7 @@ import im.wangyan.module_ui_demo.databinding.ActivityUidemoBinding
 import im.wangyan.module_ui_demo.drawer_layout.DrawerLayoutActivity
 import im.wangyan.module_ui_demo.materialbutton.MaterialButtonActivity
 import im.wangyan.module_ui_demo.searchview.SearchViewActivity
+import im.wangyan.module_ui_demo.shapeable_imageview.ShapeableImageViewActivity
 import im.wangyan.module_ui_demo.snackbar.SnackbarActivity
 import im.wangyan.module_ui_demo.swipe_refresh_layout.SwipeRefreshLayoutActivity
 import im.wangyan.module_ui_demo.tab_layout.TabLayoutActivity
@@ -103,6 +104,7 @@ class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
                     9 -> openActivity(DrawerLayoutActivity::class.java)
                     10 -> openActivity(BottomSheetActivity::class.java)
                     11 -> openActivity(MaterialButtonActivity::class.java)
+                    12 -> openActivity(ShapeableImageViewActivity::class.java)
                 }
             }
         })

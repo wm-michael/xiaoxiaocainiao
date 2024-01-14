@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".shapeable_imageview.ShapeableImageViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".materialbutton.MaterialButtonActivity"
             android:exported="false" />
         <activity
