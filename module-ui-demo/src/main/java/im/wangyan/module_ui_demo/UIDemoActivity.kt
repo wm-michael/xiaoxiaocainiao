@@ -16,6 +16,7 @@ import im.wangyan.module_ui_demo.dragrecyclerview.DragRecyclerViewActivity
 import im.wangyan.module_ui_demo.drawer_layout.DrawerLayoutActivity
 import im.wangyan.module_ui_demo.floatview.FloatViewActivity
 import im.wangyan.module_ui_demo.guideline.GuideLineActivity
+import im.wangyan.module_ui_demo.layout_divider.DividerActivity
 import im.wangyan.module_ui_demo.materialbutton.MaterialButtonActivity
 import im.wangyan.module_ui_demo.notification.NotificationActivity
 import im.wangyan.module_ui_demo.searchview.SearchViewActivity
@@ -115,6 +116,7 @@ class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
                     15 -> openActivity(NotificationActivity::class.java)
                     16 -> openActivity(FloatViewActivity::class.java)
                     17 -> openActivity(GuideLineActivity::class.java)
+                    18 -> openActivity(DividerActivity::class.java)
                 }
             }
         })
