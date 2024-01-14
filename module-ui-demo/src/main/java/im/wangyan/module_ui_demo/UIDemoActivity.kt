@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.util.Log
 import android.view.View
 import androidx.appcompat.app.AppCompatDelegate
+import im.wangyan.module_ui_demo.badgedrawable.BadgeDrawableActivity
 import im.wangyan.module_ui_demo.bottom_navigation.BottomNavigationActivity
 import im.wangyan.module_ui_demo.bottomsheet.BottomSheetActivity
 import im.wangyan.module_ui_demo.cardview.CardViewActivity
@@ -105,6 +106,7 @@ class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
                     10 -> openActivity(BottomSheetActivity::class.java)
                     11 -> openActivity(MaterialButtonActivity::class.java)
                     12 -> openActivity(ShapeableImageViewActivity::class.java)
+                    13 -> openActivity(BadgeDrawableActivity::class.java)
                 }
             }
         })
