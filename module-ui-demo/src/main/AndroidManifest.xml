@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".notification.NotificationActivity"
+            android:exported="false" />
+        <activity
             android:name=".dragrecyclerview.DragRecyclerViewActivity"
             android:exported="false" />
         <activity

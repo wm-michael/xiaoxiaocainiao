@@ -15,6 +15,7 @@ import im.wangyan.module_ui_demo.databinding.ActivityUidemoBinding
 import im.wangyan.module_ui_demo.dragrecyclerview.DragRecyclerViewActivity
 import im.wangyan.module_ui_demo.drawer_layout.DrawerLayoutActivity
 import im.wangyan.module_ui_demo.materialbutton.MaterialButtonActivity
+import im.wangyan.module_ui_demo.notification.NotificationActivity
 import im.wangyan.module_ui_demo.searchview.SearchViewActivity
 import im.wangyan.module_ui_demo.shapeable_imageview.ShapeableImageViewActivity
 import im.wangyan.module_ui_demo.snackbar.SnackbarActivity
@@ -109,6 +110,7 @@ class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
                     12 -> openActivity(ShapeableImageViewActivity::class.java)
                     13 -> openActivity(BadgeDrawableActivity::class.java)
                     14 -> openActivity(DragRecyclerViewActivity::class.java)
+                    15 -> openActivity(NotificationActivity::class.java)
                 }
             }
         })
