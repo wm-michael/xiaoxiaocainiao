@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".guideline.GuideLineActivity"
+            android:exported="false" />
+        <activity
             android:name=".floatview.FloatViewActivity"
             android:exported="false" />
         <activity
