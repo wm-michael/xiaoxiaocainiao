@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".tablayout_customview.TabLayoutCustomViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".searchview.SearchViewActivity"
             android:exported="false" />
         <activity

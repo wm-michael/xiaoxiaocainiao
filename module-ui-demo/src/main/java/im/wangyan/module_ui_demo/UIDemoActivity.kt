@@ -14,6 +14,7 @@ import im.wangyan.module_ui_demo.searchview.SearchViewActivity
 import im.wangyan.module_ui_demo.snackbar.SnackbarActivity
 import im.wangyan.module_ui_demo.swipe_refresh_layout.SwipeRefreshLayoutActivity
 import im.wangyan.module_ui_demo.tab_layout.TabLayoutActivity
+import im.wangyan.module_ui_demo.tablayout_customview.TabLayoutCustomViewActivity
 import im.wangyan.module_ui_demo.text_input_layout.TextInputLayoutActivity
 
 class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
@@ -95,6 +96,7 @@ class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
                     5 -> openActivity(CollapsingToolbarActivity::class.java)
                     6 -> openActivity(TextInputLayoutActivity::class.java)
                     7 -> openActivity(SearchViewActivity::class.java)
+                    8 -> openActivity(TabLayoutCustomViewActivity::class.java)
                 }
             }
         })
