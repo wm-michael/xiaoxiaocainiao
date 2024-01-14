@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".floatview.FloatViewActivity"
+            android:exported="false" />
+        <activity
             android:name=".notification.NotificationActivity"
             android:exported="false" />
         <activity

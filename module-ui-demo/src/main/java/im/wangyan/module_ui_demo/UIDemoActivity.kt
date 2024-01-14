@@ -14,6 +14,7 @@ import im.wangyan.module_ui_demo.collapsing_toolbar.CollapsingToolbarActivity
 import im.wangyan.module_ui_demo.databinding.ActivityUidemoBinding
 import im.wangyan.module_ui_demo.dragrecyclerview.DragRecyclerViewActivity
 import im.wangyan.module_ui_demo.drawer_layout.DrawerLayoutActivity
+import im.wangyan.module_ui_demo.floatview.FloatViewActivity
 import im.wangyan.module_ui_demo.materialbutton.MaterialButtonActivity
 import im.wangyan.module_ui_demo.notification.NotificationActivity
 import im.wangyan.module_ui_demo.searchview.SearchViewActivity
@@ -111,6 +112,7 @@ class UIDemoActivity : BaseActivity<ActivityUidemoBinding>() {
                     13 -> openActivity(BadgeDrawableActivity::class.java)
                     14 -> openActivity(DragRecyclerViewActivity::class.java)
                     15 -> openActivity(NotificationActivity::class.java)
+                    16 -> openActivity(FloatViewActivity::class.java)
                 }
             }
         })
