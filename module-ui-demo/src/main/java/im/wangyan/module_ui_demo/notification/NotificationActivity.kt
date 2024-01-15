@@ -336,8 +336,6 @@ class NotificationActivity : BaseActivity<ActivityNotificationBinding>() {
         //registerReceiver(mReceiver, intentFilter)
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             registerReceiver(mReceiver, intentFilter, Context.RECEIVER_EXPORTED)
-        } else {
-            registerReceiver(mReceiver, intentFilter)
         }
     }
 
