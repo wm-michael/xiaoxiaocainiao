@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".main.MainActivity"
+            android:exported="false" />
+        <activity
             android:name=".Retrofit4.Retrofit4Activity"
             android:exported="false" />
         <activity
