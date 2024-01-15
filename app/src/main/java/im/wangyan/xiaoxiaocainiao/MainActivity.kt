@@ -9,6 +9,7 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.DividerItemDecoration
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.module_apollographql.ApollographqlActivity
 import im.wangyan.module_retrofit.Retrofit2.Retrofit2Activity
 import im.wangyan.module_retrofit.Retrofit3.Retrofit3Activity
 import im.wangyan.module_retrofit.Retrofit4.Retrofit4Activity
@@ -26,7 +27,8 @@ class MainActivity : AppCompatActivity() {
         val ui_demos_list = arrayOf("ui demo")
         val retrofit_list = arrayOf("retrofit-call", "retrofit-suspend", "retrofit-flow", "retrofit-flow-result", "retrofit-gson-convert")
         val room_list = arrayOf("room-suspend", "room-flow")
-        val dataset = retrofit_list + room_list + ui_demos_list
+        val apollo_list = arrayOf("Apollo GraphQL")
+        val dataset = retrofit_list + room_list + ui_demos_list + apollo_list
         val customAdapter = CustomAdapter(dataset)
         customAdapter.setOnItemClickListener(object : CustomAdapter.OnItemClickListener {
             override fun onItemClick(view: View, position: Int) {
@@ -71,6 +73,11 @@ class MainActivity : AppCompatActivity() {
 
                     7 -> {
                         val intent = Intent(baseContext, UIDemoActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    8 -> {
+                        val intent = Intent(baseContext, ApollographqlActivity::class.java)
                         startActivity(intent)
                     }
                 }
