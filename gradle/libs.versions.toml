@@ -28,6 +28,7 @@ swiperefreshlayout = "1.1.0"
 #第三方库,不是官方的!!
 lottie = "5.0.1"
 apollographql = "3.8.2"
+glide = "4.16.0"
 
 [libraries]
 #core
@@ -56,6 +57,7 @@ androidx-swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "s
 #第三方库,不是官方的!!
 airbnb-lottie = {group = "com.airbnb.android", name = "lottie", version.ref = "lottie"}
 apollo-graphql = {group = "com.apollographql.apollo3", name = "apollo-runtime", version.ref = "apollographql"}
+bumptech-glide = {group = "com.github.bumptech.glide", name = "glide", version.ref = "glide"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "application" }
