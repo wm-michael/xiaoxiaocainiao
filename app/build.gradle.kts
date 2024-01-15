@@ -42,4 +42,9 @@ dependencies {
     implementation(project(":module-room"))
     implementation(project(":module-ui-demo"))
     implementation(project(":module-apollographql"))
+    implementation(libs.androidx.appcompat)
+    implementation(libs.android.material)
+    testImplementation(libs.junit.junit)
+    androidTestImplementation(libs.androidx.junit)
+    androidTestImplementation(libs.androidx.espresso)
 }
