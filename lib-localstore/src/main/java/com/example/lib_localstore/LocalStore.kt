@@ -1,18 +1,43 @@
 package com.example.lib_localstore
 
 import android.content.Context
-import androidx.datastore.preferences.SharedPreferencesMigration
+import android.util.Log
+import androidx.datastore.core.DataStore
+import androidx.datastore.preferences.core.Preferences
+import androidx.datastore.preferences.core.edit
 import androidx.datastore.preferences.preferencesDataStore
-
-object LocalStore {
-    const val SOTRE_NAME = "xiaoxiao_data_store"
+import kotlinx.coroutines.flow.Flow
 
 
-    val Context.dataStrore by preferencesDataStore(SOTRE_NAME, produceMigrations = {
-                context ->
-        listOf(SharedPreferencesMigration(context, SOTRE_NAME))
-    })
+private const val PREFERENCES_NAME = "preferences_datastore_xiaoxiaocainiao"
 
-    //TODO：需要把datastore封装一下，根据key的Type和Value获取数据、设置数据
+private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = PREFERENCES_NAME)
 
+class LocalStoreManger private constructor() {
+
+    private var isInit = false
+    private lateinit var context: Context
+
+    companion object {
+        val instance: LocalStoreManger by lazy(mode = LazyThreadSafetyMode.SYNCHRONIZED) {
+            LocalStoreManger()
+        }
+    }
+
+    fun init(context: Context) {
+        if (isInit) return
+        this.context = context
+        isInit = true
+    }
+
+    fun getData(): Flow<Preferences> {
+        return context.dataStore.data
+    }
+
+    suspend fun saveNanme(name: String) {
+        context.dataStore.edit { preferences ->
+            Log.d("XIAOXIAO", "LocalStoreManger saveNanme: $name")
+            preferences[PreferenceKeys.NAME] = name
+        }
+    }
 }

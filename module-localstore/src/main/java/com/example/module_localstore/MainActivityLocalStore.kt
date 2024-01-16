@@ -1,17 +1,14 @@
 package com.example.module_localstore
 
-import android.content.Context
 import android.os.Bundle
 import android.util.Log
 import android.widget.Button
 import android.widget.EditText
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
-import androidx.datastore.core.DataStore
-import androidx.datastore.preferences.core.Preferences
-import androidx.datastore.preferences.preferencesDataStore
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.lifecycleScope
+import com.example.lib_localstore.LocalStoreManger
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch
 
@@ -19,15 +16,15 @@ import kotlinx.coroutines.launch
 class MainActivityLocalStore : AppCompatActivity() {
 
     private lateinit var mainViewModel: MainViewModel
-    private val DATA_STORE_NAME = "xiaoxiao_datastore"
-    private val Context.dataStore: DataStore<Preferences> by preferencesDataStore(name = DATA_STORE_NAME)
 
     private val nameLiveData = MutableLiveData<String>("")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main_local_store)
 
-        mainViewModel = MainViewModelFactory(dataStore).create(MainViewModel::class.java)
+        LocalStoreManger.instance.init(this.applicationContext)
+
+        mainViewModel = MainViewModelFactory("XIAOXIAO").create(MainViewModel::class.java)
 
         nameLiveData.observe(this) {
             Log.d("XIAOXIAO", "observe name: $it")
