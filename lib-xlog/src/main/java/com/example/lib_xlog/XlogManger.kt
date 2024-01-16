@@ -15,6 +15,9 @@ class XlogManger private constructor() {
         }
     }
 
+    //xlog日志文件的加密和解密
+    //https://github.com/Tencent/mars/tree/master/mars/xlog/crypt/gen_key.py
+
     fun init(context: Application) {
         android.util.Log.d("XIAOXIAO", "xlog init 1")
         if (isInit) return
@@ -41,7 +44,7 @@ class XlogManger private constructor() {
                 logPath,
                 "XlogSample",
                 0
-            );
+            )
             Log.setConsoleLogOpen(true)
         } else {
             Log.appenderOpen(
@@ -51,7 +54,7 @@ class XlogManger private constructor() {
                 logPath,
                 "XlogSample",
                 0
-            );
+            )
             Log.setConsoleLogOpen(false);
         }
     }
