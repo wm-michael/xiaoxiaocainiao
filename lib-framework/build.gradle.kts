@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.module_xlog"
+    namespace = "com.example.lib_framework"
     compileSdk = 34
 
     defaultConfig {
@@ -34,12 +34,9 @@ android {
 }
 
 dependencies {
-    implementation(project(":lib-xlog"))
-    implementation(project(":lib-framework"))
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
-    implementation(libs.constraintlayout)
     testImplementation(libs.junit.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso)

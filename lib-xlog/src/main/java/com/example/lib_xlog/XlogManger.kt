@@ -62,4 +62,9 @@ class XlogManger private constructor() {
     fun release() {
         Log.appenderClose()
     }
+
+    fun XLogD(tag: String, message: String) {
+        android.util.Log.d(tag, "debug : $message")
+        Log.d(tag, message)
+    }
 }
