@@ -28,7 +28,7 @@ lifecycleViewmodelKtx = "2.6.2"
 swiperefreshlayout = "1.1.0"
 
 #第三方库,不是官方的!!
-lottie = "5.0.1"
+lottie = "6.1.0"
 apollographql = "3.8.2"
 glide = "4.16.0"
 mars-xlog = "1.2.5"
