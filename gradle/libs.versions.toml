@@ -31,6 +31,7 @@ swiperefreshlayout = "1.1.0"
 lottie = "5.0.1"
 apollographql = "3.8.2"
 glide = "4.16.0"
+mars-xlog = "1.2.5"
 
 [libraries]
 #core
@@ -62,6 +63,7 @@ androidx-swiperefreshlayout = { group = "androidx.swiperefreshlayout", name = "s
 airbnb-lottie = {group = "com.airbnb.android", name = "lottie", version.ref = "lottie"}
 apollo-graphql = {group = "com.apollographql.apollo3", name = "apollo-runtime", version.ref = "apollographql"}
 bumptech-glide = {group = "com.github.bumptech.glide", name = "glide", version.ref = "glide"}
+mars-xlog = {group = "com.tencent.mars", name = "mars-xlog", version.ref = "mars-xlog"}
 
 [plugins]
 androidApplication = { id = "com.android.application", version.ref = "application" }
