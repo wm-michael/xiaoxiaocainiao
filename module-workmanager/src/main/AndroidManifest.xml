@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".demo1.WorkManager1Activity"
+            android:exported="false" />
+        <activity
             android:name=".demo0.WorkManager0Activity"
             android:exported="false" />
         <activity
