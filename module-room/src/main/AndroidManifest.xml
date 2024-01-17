@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".RoomMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".demo1.Room1Activity"
             android:exported="false" />
         <activity

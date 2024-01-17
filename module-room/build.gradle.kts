@@ -41,6 +41,7 @@ dependencies {
 
     implementation(project(":lib-room"))
     implementation(project(":lib-room-flow"))
+    implementation(project(":lib-common"))
 
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)

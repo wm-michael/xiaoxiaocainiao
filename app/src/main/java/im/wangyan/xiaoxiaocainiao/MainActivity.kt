@@ -16,8 +16,7 @@ import com.example.module_glide.GlideMainActivity
 import com.example.module_localstore.MainActivityLocalStore
 import com.example.module_workmanager.WorkManagerMainActivity
 import com.example.module_xlog.XLogMainActivity
-import im.wangyan.module_room.demo0.Room0Activity
-import im.wangyan.module_room.demo1.Room1Activity
+import im.wangyan.module_room.RoomMainActivity
 import im.wangyan.module_ui_demo.UIDemoActivity
 
 
@@ -27,11 +26,9 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val ui_demos_list = arrayOf("UI demo")
-        val retrofit_list = arrayOf("Retrofit")
-        val room_list = arrayOf("Room-suspend", "Room-flow")
-        val other = arrayOf("Apollo GraphQL", "Glide","DataStore", "Xlog", "WorkManager", "ExoPlayer", "compose")
-        val dataset = retrofit_list + room_list + ui_demos_list + other
+        val core_list = arrayOf("UI Demo", "Retrofit", "Room")
+        val other = arrayOf("Apollo GraphQL", "Glide","DataStore", "Xlog", "WorkManager", "ExoPlayer", "Compose")
+        val dataset = core_list + other
         val customAdapter = CustomAdapter(dataset)
         customAdapter.setOnItemClickListener(object : CustomAdapter.OnItemClickListener {
             override fun onItemClick(view: View, position: Int) {
@@ -40,56 +37,51 @@ class MainActivity : AppCompatActivity() {
                 when(position) {
 
                     0 -> {
-                        val intent = Intent(baseContext, im.wangyan.module_retrofit.main.MainActivity::class.java)
-                        startActivity(intent)
-                    }
-
-                    1 -> {
-                        val intent = Intent(baseContext, Room0Activity::class.java)
-                        startActivity(intent)
-                    }
-
-                    2 -> {
-                        val intent = Intent(baseContext, Room1Activity::class.java)
-                        startActivity(intent)
-                    }
-
-                    3 -> {
                         val intent = Intent(baseContext, UIDemoActivity::class.java)
                         startActivity(intent)
                     }
 
-                    4 -> {
+                    1 -> {
+                        val intent = Intent(baseContext, im.wangyan.module_retrofit.main.MainActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    2 -> {
+                        val intent = Intent(baseContext, RoomMainActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    3 -> {
                         val intent = Intent(baseContext, ApollographqlActivity::class.java)
                         startActivity(intent)
                     }
 
-                    5 -> {
+                    4 -> {
                         val intent = Intent(baseContext, GlideMainActivity::class.java)
                         startActivity(intent)
                     }
 
-                    6 -> {
+                    5 -> {
                         val intent = Intent(baseContext, MainActivityLocalStore::class.java)
                         startActivity(intent)
                     }
 
-                    7 -> {
+                    6 -> {
                         val intent = Intent(baseContext, XLogMainActivity::class.java)
                         startActivity(intent)
                     }
 
-                    8 -> {
+                    7 -> {
                         val intent = Intent(baseContext, WorkManagerMainActivity::class.java)
                         startActivity(intent)
                     }
 
-                    9 -> {
+                    8 -> {
                         val intent = Intent(baseContext, ExoPlayerMainActivity::class.java)
                         startActivity(intent)
                     }
 
-                    10 -> {
+                    9 -> {
                         val intent = Intent(baseContext, ComposeMainActivity::class.java)
                         startActivity(intent)
                     }
