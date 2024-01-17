@@ -1,0 +1,4 @@
+<resources>
+    <string name="media_url_mp3">https://storage.googleapis.com/exoplayer-test-media-0/play.mp3</string>
+    <string name="media_url_mp4">https://media.geeksforgeeks.org/wp-content/uploads/20201217163353/Screenrecorder-2020-12-17-16-32-03-350.mp4</string>
+</resources>
