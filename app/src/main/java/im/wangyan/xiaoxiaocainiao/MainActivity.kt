@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.module_apollographql.ApollographqlActivity
 import com.example.module_glide.GlideMainActivity
 import com.example.module_localstore.MainActivityLocalStore
+import com.example.module_workmanager.WorkManagerMainActivity
 import com.example.module_xlog.XLogMainActivity
 import im.wangyan.module_room.demo0.Room0Activity
 import im.wangyan.module_room.demo1.Room1Activity
@@ -27,7 +28,7 @@ class MainActivity : AppCompatActivity() {
         val ui_demos_list = arrayOf("UI demo")
         val retrofit_list = arrayOf("Retrofit")
         val room_list = arrayOf("Room-suspend", "Room-flow")
-        val other = arrayOf("Apollo GraphQL", "Glide","DataStore", "Xlog")
+        val other = arrayOf("Apollo GraphQL", "Glide","DataStore", "Xlog", "WorkManager")
         val dataset = retrofit_list + room_list + ui_demos_list + other
         val customAdapter = CustomAdapter(dataset)
         customAdapter.setOnItemClickListener(object : CustomAdapter.OnItemClickListener {
@@ -73,6 +74,11 @@ class MainActivity : AppCompatActivity() {
 
                     7 -> {
                         val intent = Intent(baseContext, XLogMainActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    8 -> {
+                        val intent = Intent(baseContext, WorkManagerMainActivity::class.java)
                         startActivity(intent)
                     }
                 }
