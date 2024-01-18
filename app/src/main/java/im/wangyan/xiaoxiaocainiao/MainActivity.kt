@@ -12,6 +12,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.module_apollographql.ApollographqlActivity
 import com.example.module_compose.ComposeMainActivity
 import com.example.module_exoplayer.ExoPlayerMainActivity
+import com.example.module_file_system.FileSystemMainActivity
 import com.example.module_glide.GlideMainActivity
 import com.example.module_localstore.MainActivityLocalStore
 import com.example.module_test_compose.demo0.TestCompose0MainActivity
@@ -28,7 +29,7 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         val core_list = arrayOf("UI Demo", "Retrofit", "Room")
-        val other = arrayOf("Apollo GraphQL", "Glide","DataStore", "Xlog", "WorkManager", "ExoPlayer", "Compose","Test-Compose")
+        val other = arrayOf("Apollo GraphQL", "Glide","DataStore", "Xlog", "WorkManager", "ExoPlayer", "Compose","Test-Compose", "File System")
         val dataset = core_list + other
         val customAdapter = CustomAdapter(dataset)
         customAdapter.setOnItemClickListener(object : CustomAdapter.OnItemClickListener {
@@ -89,6 +90,11 @@ class MainActivity : AppCompatActivity() {
 
                     10 -> {
                         val intent = Intent(baseContext, TestCompose0MainActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    11 -> {
+                        val intent = Intent(baseContext, FileSystemMainActivity::class.java)
                         startActivity(intent)
                     }
                 }
