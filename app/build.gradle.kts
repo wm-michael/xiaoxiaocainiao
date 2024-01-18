@@ -50,6 +50,7 @@ dependencies {
     implementation(project(":module-workmanager"))
     implementation(project(":module-exoplayer"))
     implementation(project(":module-compose"))
+    implementation(project(":module-test-compose"))
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
     testImplementation(libs.junit.junit)
