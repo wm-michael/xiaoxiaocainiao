@@ -2,4 +2,7 @@
 <resources>
     <color name="press">#00eeFF</color>
     <color name="normal">#FFFFbb</color>
+
+    <color name="orange">#FF7777</color>
+    <color name="darkblue">#7777FF</color>
 </resources>

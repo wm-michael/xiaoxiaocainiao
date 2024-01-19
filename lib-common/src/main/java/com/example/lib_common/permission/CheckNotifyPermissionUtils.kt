@@ -1,4 +1,4 @@
-package im.wangyan.module_ui_demo.notification
+package com.example.lib_common.permission
 
 import android.content.Context
 import android.content.Intent

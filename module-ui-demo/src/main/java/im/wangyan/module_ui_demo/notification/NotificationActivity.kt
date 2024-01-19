@@ -73,54 +73,73 @@ class NotificationActivity : BaseActivity<ActivityNotificationBinding>() {
 
     private fun setClickListener() {
         mBinding.mbNormal.setOnClickListener {
-            checkPermission()
+            if(!checkPermission()) {
+                return@setOnClickListener
+            }
             createNotificationForNormal()
         }
 
         mBinding.mbHigh.setOnClickListener {
-            checkPermission()
+            if(!checkPermission()) {
+                return@setOnClickListener
+            }
             createNotificationForHigh()
         }
 
         mBinding.mbProgress.setOnClickListener {
-            checkPermission()
+            if(!checkPermission()) {
+                return@setOnClickListener
+            }
             createNotificationForProgress()
         }
 
         mBinding.mbUpdateProgress.setOnClickListener {
-            checkPermission()
+            if(!checkPermission()) {
+                return@setOnClickListener
+            }
             updateNotificationForProgress()
         }
 
         mBinding.mbBigText.setOnClickListener {
-            checkPermission()
+            if(!checkPermission()) {
+                return@setOnClickListener
+            }
             createNotificationForBigText()
         }
 
         mBinding.mbBigImage.setOnClickListener {
-            checkPermission()
+            if(!checkPermission()) {
+                return@setOnClickListener
+            }
             createNotificationForBigImage()
         }
 
         mBinding.mbCustom.setOnClickListener {
-            checkPermission()
+            if(!checkPermission()) {
+                return@setOnClickListener
+            }
             createNotificationForCustom()
         }
 
         mBinding.mbUpdateCustom.setOnClickListener {
-            checkPermission()
+            if(!checkPermission()) {
+                return@setOnClickListener
+            }
             updateNotificationForCustom()
         }
 
     }
 
-    private fun checkPermission() {
-        val checker = CheckNotifyPermissionUtils()
+    private fun checkPermission(): Boolean {
+        val checker = com.example.lib_common.permission.CheckNotifyPermissionUtils()
         if (checker.checkNotifyPermission(this)) {
-            Toast.makeText(this,"没有权限", Toast.LENGTH_SHORT)
+            Toast.makeText(this,"有权限", Toast.LENGTH_SHORT)
+            return true
         } else {
+            Toast.makeText(this,"没有权限", Toast.LENGTH_SHORT)
             checker.tryJumpNotifyPage(this)
         }
+        return false
     }
 
     /**
