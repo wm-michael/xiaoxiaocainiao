@@ -52,6 +52,7 @@ dependencies {
     implementation(project(":module-compose"))
     implementation(project(":module-test-compose"))
     implementation(project(":module-file-system"))
+    implementation(project(":module-service"))
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
     testImplementation(libs.junit.junit)
