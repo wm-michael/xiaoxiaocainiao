@@ -40,6 +40,7 @@ android {
 dependencies {
 
     implementation(project(":lib-common"))
+    implementation(libs.play.services.location)
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
@@ -47,4 +48,6 @@ dependencies {
     testImplementation(libs.junit.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso)
+
+
 }

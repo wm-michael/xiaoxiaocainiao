@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.lib_common.adapter.CommonListAdapter
 import com.example.module_service.databinding.ActivityServiceMainBinding
 import com.example.module_service.demo0.ServiceDemo0Activity
+import com.example.module_service.demo1.ServiceDemo1Activity
 
 class ServiceMainActivity : AppCompatActivity() {
 
@@ -26,6 +27,11 @@ class ServiceMainActivity : AppCompatActivity() {
                 when (position) {
                     0 -> {
                         val intent = Intent(baseContext, ServiceDemo0Activity::class.java)
+                        startActivity(intent)
+                    }
+
+                    1 -> {
+                        val intent = Intent(baseContext, ServiceDemo1Activity::class.java)
                         startActivity(intent)
                     }
                 }

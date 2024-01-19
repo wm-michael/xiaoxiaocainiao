@@ -34,6 +34,8 @@ compose-uitoolingpreview = "1.5.4"
 compose-uitooling = "1.5.4"
 compose-uitest = "1.5.4"
 compose-ui-test-manifest = "1.5.4"
+#Location
+play-services-location = "21.0.0"
 
 #第三方库,不是官方的!!
 lottie = "6.1.0"
@@ -86,6 +88,9 @@ compose-uitooling = { group = "androidx.compose.ui", name = "ui-tooling", versio
 ###Compose TEST
 compose-uitest = { group = "androidx.compose.ui", name = "ui-test-junit4", version.ref = "compose-uitest" }
 compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest", version.ref = "compose-ui-test-manifest" }
+#Location
+play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "play-services-location"}
+
 
 #第三方库,不是官方的!!
 airbnb-lottie = {group = "com.airbnb.android", name = "lottie", version.ref = "lottie"}
