@@ -1,49 +1,42 @@
 package com.example.module_compose.codelab.animation_codelab.ui.theme
 
-import androidx.compose.animation.animateColor
 import androidx.compose.animation.animateColorAsState
-import androidx.compose.animation.core.Spring
-import androidx.compose.animation.core.animateDp
-import androidx.compose.animation.core.spring
-import androidx.compose.animation.core.updateTransition
-import androidx.compose.foundation.BorderStroke
-import androidx.compose.foundation.background
-import androidx.compose.foundation.border
-import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.Box
-import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.offset
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
-import androidx.compose.foundation.layout.width
-import androidx.compose.foundation.layout.wrapContentSize
-import androidx.compose.foundation.shape.RoundedCornerShape
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.filled.Email
-import androidx.compose.material.icons.filled.Home
-import androidx.compose.material3.Icon
+import androidx.compose.foundation.lazy.LazyColumn
+import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Scaffold
-import androidx.compose.material3.TabPosition
-import androidx.compose.material3.TabRow
+import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
+import androidx.compose.material3.TextButton
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.getValue
+import androidx.compose.runtime.key
+import androidx.compose.runtime.mutableStateListOf
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
+import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.runtime.setValue
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.stringArrayResource
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.compose.Green300
-import com.example.compose.Green800
 import com.example.compose.Yello100
-import com.example.compose.Yello500
+import com.example.module_compose.R
+import com.example.module_compose.codelab.animation_codelab.ui.Header
+import com.example.module_compose.codelab.animation_codelab.ui.HomeTabBar
+import com.example.module_compose.codelab.animation_codelab.ui.LoadingRow
+import com.example.module_compose.codelab.animation_codelab.ui.TaskRow
+import com.example.module_compose.codelab.animation_codelab.ui.TopicRow
+import com.example.module_compose.codelab.animation_codelab.ui.WeatherRow
+import kotlinx.coroutines.delay
+import kotlinx.coroutines.launch
 
-private enum class TabPage {
+enum class TabPage {
     Home,
     Work
 }
@@ -51,112 +44,85 @@ private enum class TabPage {
 @Composable
 fun Home() {
 
+    val allTopics = stringArrayResource(R.array.topics).toList()
+    // Holds the topic that is currently expanded to show its body.
+    var expandedTopic by remember { mutableStateOf<String?>(null) }
+
+    val allTasks = stringArrayResource(R.array.tasks)
+    // Holds all the tasks currently shown on the task list.
+    val tasks = remember { mutableStateListOf(*allTasks) }
+
     // The currently selected tab.
     var tabPage by remember { mutableStateOf(TabPage.Home) }
+    // True if the whether data is currently loading.
+    var weatherLoading by remember { mutableStateOf(false) }
     // The background color. The value is changed by the current tab.
     val backgroundColor by animateColorAsState(if (tabPage == TabPage.Home) Yello100 else Green300)
 
+    suspend fun loadWeather() {
+        if (!weatherLoading) {
+            weatherLoading = true
+            delay(3000L)
+            weatherLoading = false
+        }
+    }
+
+    val coroutineScope = rememberCoroutineScope()
     Scaffold(
-        modifier = Modifier.background(backgroundColor),
+        modifier = Modifier.padding(16.dp, 32.dp),
+        containerColor = backgroundColor,
         topBar = {
             HomeTabBar(tabPage, onTabSeleted = { tabPage = it }, backgroundColor = backgroundColor)
         }) { padding ->
-        Text(modifier = Modifier.padding(padding), text = "TEST")
-    }
-}
-
-@Composable
-private fun HomeTabBar(tabPage: TabPage, onTabSeleted: (TabPage) -> Unit, backgroundColor: Color) {
-    Text(text = "HomeTabBar")
-    TabRow(
-        selectedTabIndex = tabPage.ordinal,
-        containerColor = backgroundColor,
-        indicator = { positions ->
-            HomeTabIndicator(positions, tabPage)
-        }) {
-        HomeTabRow(icon = Icons.Default.Home, onClick = { onTabSeleted(TabPage.Home) })
-        HomeTabRow(icon = Icons.Default.Email, onClick = { onTabSeleted(TabPage.Work) })
-    }
-}
-
-@Composable
-private fun HomeTabRow(icon: ImageVector, onClick: () -> Unit) {
-    Row(
-        modifier = Modifier
-            .padding(16.dp)
-            .clickable(onClick = onClick)
-    ) {
-        Icon(imageVector = icon, contentDescription = null)
-        Spacer(modifier = Modifier.width(16.dp))
-        Text(text = "Home")
-    }
-}
-
-@Composable
-private fun HomeTabIndicator(tabPositions: List<TabPosition>, tabPage: TabPage) {
-
-    val transition = updateTransition(
-        tabPage,
-        label = "Tab indicator"
-    )
-
-    val indicatorLeft by transition.animateDp(
-        transitionSpec = {
-            if (TabPage.Home isTransitioningTo TabPage.Work) {
-                // Indicator moves to the right.
-                // Low stiffness spring for the left edge so it moves slower than the right edge.
-                spring(stiffness = Spring.StiffnessVeryLow)
-            } else {
-                // Indicator moves to the left.
-                // Medium stiffness spring for the left edge so it moves faster than the right edge.
-                spring(stiffness = Spring.StiffnessMedium)
+        LazyColumn(modifier = Modifier.padding(padding)) {
+            item { Header(title = stringResource(id = R.string.weather)) }
+            item { Spacer(modifier = Modifier.height(16.dp)) }
+            item {
+                Surface(
+                    modifier = Modifier.fillMaxWidth(),
+                ) {
+                    if (weatherLoading) {
+                        LoadingRow()
+                    } else {
+                        WeatherRow(onRefresh = {
+                            coroutineScope.launch {
+                                loadWeather()
+                            }
+                        })
+                    }
+                }
             }
-        },
-        label = "Indicator left"
-    ) { page ->
-        tabPositions[page.ordinal].left
-    }
-
-    val indicatorRight by transition.animateDp(
-        transitionSpec = {
-            if (TabPage.Home isTransitioningTo TabPage.Work) {
-                // Indicator moves to the right
-                // Medium stiffness spring for the right edge so it moves faster than the left edge.
-                spring(stiffness = Spring.StiffnessMedium)
-            } else {
-                // Indicator moves to the left.
-                // Low stiffness spring for the right edge so it moves slower than the left edge.
-                spring(stiffness = Spring.StiffnessVeryLow)
+            item { Spacer(modifier = Modifier.height(32.dp)) }
+            // Topics
+            item { Header(title = stringResource(R.string.topics)) }
+            item { Spacer(modifier = Modifier.height(16.dp)) }
+            items(allTopics) { topic ->
+                TopicRow(topic = topic, expanded = expandedTopic == topic, onClick = {
+                    expandedTopic = if (expandedTopic == topic) null else topic
+                })
             }
-        },
-        label = "Indicator right"
-    ) { page ->
-        tabPositions[page.ordinal].right
+            item { Spacer(modifier = Modifier.height(32.dp)) }
+            item { Header(title = stringResource(R.string.tasks)) }
+            item { Spacer(modifier = Modifier.height(16.dp)) }
+            if (tasks.isEmpty()) {
+                item {
+                    TextButton(onClick = { tasks.clear(); tasks.addAll(allTasks) }) {
+                        Text(stringResource(R.string.add_tasks))
+                    }
+                }
+            } else {
+                items(tasks) { task ->
+                    key(task) {
+                        TaskRow(task = task, onRemove = { tasks.remove(task) })
+                    }
+                }
+            }
+        }
     }
-
-    val color by transition.animateColor(
-        label = "Border color"
-    ) { page ->
-        if (page == TabPage.Home) Yello500 else Green800
-    }
-
-    Box(
-        Modifier
-            .fillMaxSize()
-            .wrapContentSize(align = Alignment.BottomStart)
-            .offset(x = indicatorLeft)
-            .width(indicatorRight - indicatorLeft)
-            .padding(4.dp)
-            .fillMaxSize()
-            .border(
-                BorderStroke(2.dp, color),
-                RoundedCornerShape(4.dp)
-            )
-    )
 }
 
-@Preview()
+@Preview(showBackground = true)
 @Composable
-fun PrevieHome() {
+fun PrevieHome1() {
     Home()
 }
