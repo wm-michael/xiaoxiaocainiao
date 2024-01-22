@@ -4,7 +4,7 @@ import androidx.compose.ui.graphics.Color
 
 
 val Yello100 = Color(0xFFFFEA8D)
-val Purple500 = Color(0xFF6200EE)
+val Yello500 = Color(0xFFFFB356)
 val Purple700 = Color(0xFF3700B3)
 val Teal200 = Color(0xFF03DAC5)
 val Green300 = Color(0xFF81C784)
