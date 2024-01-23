@@ -3,6 +3,9 @@
 
     <application>
         <activity
+            android:name=".codelab.basic_state_codelab.BasicStateCodelabMainActivity"
+            android:exported="false" />
+        <activity
             android:name=".codelab.animation_codelab.AnimationCodelabMainActivity"
             android:exported="false" />
         <activity
