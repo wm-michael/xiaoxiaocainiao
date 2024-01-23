@@ -10,7 +10,6 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.items
 import androidx.compose.material3.Button
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -18,9 +17,9 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
-import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.module_compose.codelab.animation_codelab.AnimationCodelabMainActivity
+import com.example.module_compose.codelab.basic_state_codelab.BasicStateCodelabMainActivity
 
 class ComposeMainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -36,14 +35,18 @@ class ComposeMainActivity : AppCompatActivity() {
 @Composable
 fun MainHome() {
     val mContext = LocalContext.current
-    val titles = arrayOf("AnimationCodeLab", "b", "c")
-    Column(horizontalAlignment = Alignment.CenterHorizontally,
-        verticalArrangement = Arrangement.Top) {
-        Text("basic animation", modifier = Modifier
-            .background(color = Color.White)
-            .padding(30.dp))
+    val titles = arrayOf("AnimationCodeLab", "BasicStateCodeLab", "c")
+    Column(
+        horizontalAlignment = Alignment.CenterHorizontally,
+        verticalArrangement = Arrangement.Top
+    ) {
+        Text(
+            "basic animation", modifier = Modifier
+                .background(color = Color.White)
+                .padding(30.dp)
+        )
         LazyColumn(modifier = Modifier.fillMaxSize(), content = {
-            items(titles) { title ->
+            item {
                 Button(onClick = {
                     mContext.startActivity(
                         Intent(
@@ -52,15 +55,21 @@ fun MainHome() {
                         )
                     )
                 }) {
-                    Text(text = title)
+                    Text(text = titles[0])
+                }
+            }
+            item {
+                Button(onClick = {
+                    mContext.startActivity(
+                        Intent(
+                            mContext,
+                            BasicStateCodelabMainActivity::class.java
+                        )
+                    )
+                }) {
+                    Text(text = titles[1])
                 }
             }
         })
     }
-}
-
-@Preview(showBackground = true)
-@Composable
-fun ComposePreview() {
-    MainHome()
 }

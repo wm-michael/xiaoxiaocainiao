@@ -54,4 +54,6 @@ dependencies {
     implementation(libs.compose.material3)
     implementation(libs.compose.uitoolingpreview)
     debugImplementation(libs.compose.uitooling)
+
+    implementation(libs.lifecycle.viewmodel.compose)
 }
