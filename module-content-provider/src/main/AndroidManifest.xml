@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <application>
+        <activity
+            android:name=".ContentProviderMainActivity"
+            android:exported="false" />
+        <provider
+            android:name="com.example.module_content_provider.MyContentProvider"
+            android:authorities="im.wangyan.xiaoxiaocainiao"
+            android:enabled="true"
+            android:exported="true"></provider>
+    </application>
+
+</manifest>
