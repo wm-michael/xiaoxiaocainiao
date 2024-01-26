@@ -37,6 +37,9 @@ compose-ui-test-manifest = "1.5.4"
 lifecycle-viewmodel-compose = "2.6.1"
 #Location
 play-services-location = "21.0.0"
+#
+lifecycle-livedata-ktx = "2.5.1"
+activity-ktx =  "1.6.1"
 
 #第三方库,不是官方的!!
 lottie = "6.1.0"
@@ -93,6 +96,9 @@ compose-uitest = { group = "androidx.compose.ui", name = "ui-test-junit4", versi
 compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest", version.ref = "compose-ui-test-manifest" }
 #Location
 play-services-location = { group = "com.google.android.gms", name = "play-services-location", version.ref = "play-services-location"}
+#
+lifecycle-livedata-ktx = {group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle-livedata-ktx"}
+activity-ktx = {group = "androidx.activity", name = "activity-ktx", version.ref = "activity-ktx"}
 
 
 #第三方库,不是官方的!!

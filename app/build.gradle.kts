@@ -36,6 +36,11 @@ android {
     kotlinOptions {
         jvmTarget = "1.8"
     }
+
+    buildFeatures {
+        //子模块使用了data binding，app调用了子模块，app也必须开启
+        dataBinding = true
+    }
 }
 
 dependencies {
@@ -54,6 +59,7 @@ dependencies {
     implementation(project(":module-file-system"))
     implementation(project(":module-service"))
     implementation(project(":module-content-provider"))
+    implementation(project(":module-livedata"))
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
     testImplementation(libs.junit.junit)
