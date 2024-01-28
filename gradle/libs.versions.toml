@@ -40,6 +40,8 @@ play-services-location = "21.0.0"
 #databindings
 lifecycle-livedata-ktx = "2.6.2"
 activity-ktx =  "1.8.2"
+#paging
+paging-runtime = "3.1.1"
 
 #第三方库,不是官方的!!
 lottie = "6.1.0"
@@ -99,7 +101,8 @@ play-services-location = { group = "com.google.android.gms", name = "play-servic
 #databindings
 lifecycle-livedata-ktx = {group = "androidx.lifecycle", name = "lifecycle-livedata-ktx", version.ref = "lifecycle-livedata-ktx"}
 activity-ktx = {group = "androidx.activity", name = "activity-ktx", version.ref = "activity-ktx"}
-
+#paging
+paging-runtime = {group = "androidx.paging", name = "paging-runtime", version.ref = "paging-runtime"}
 
 #第三方库,不是官方的!!
 airbnb-lottie = {group = "com.airbnb.android", name = "lottie", version.ref = "lottie"}

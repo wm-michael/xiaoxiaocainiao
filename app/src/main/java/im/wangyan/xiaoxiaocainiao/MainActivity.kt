@@ -17,6 +17,7 @@ import com.example.module_file_system.FileSystemMainActivity
 import com.example.module_glide.GlideMainActivity
 import com.example.module_livedata.LivedataMainActivity
 import com.example.module_localstore.MainActivityLocalStore
+import com.example.module_paging.PagingMainActivity
 import com.example.module_service.ServiceMainActivity
 import com.example.module_test_compose.demo0.TestCompose0MainActivity
 import com.example.module_workmanager.WorkManagerMainActivity
@@ -34,7 +35,7 @@ class MainActivity : AppCompatActivity() {
         val core_list = arrayOf("UI Demo", "Retrofit", "Room")
         val other = arrayOf(
             "Apollo GraphQL", "Glide","DataStore", "XLog", "WorkManager", "ExoPlayer", "Compose","Test-Compose",
-            "File System", "Service","ContentProvider","Livedata-dataBinding"
+            "File System", "Service","ContentProvider","Livedata-dataBinding","Jetpack Paging"
         )
         val dataset = core_list + other
         val customAdapter = CustomAdapter(dataset)
@@ -116,6 +117,11 @@ class MainActivity : AppCompatActivity() {
 
                     14 -> {
                         val intent = Intent(baseContext, LivedataMainActivity::class.java)
+                        startActivity(intent)
+                    }
+
+                    15 -> {
+                        val intent = Intent(baseContext, PagingMainActivity::class.java)
                         startActivity(intent)
                     }
                 }

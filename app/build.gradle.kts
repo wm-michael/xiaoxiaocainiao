@@ -60,6 +60,7 @@ dependencies {
     implementation(project(":module-service"))
     implementation(project(":module-content-provider"))
     implementation(project(":module-livedata"))
+    implementation(project(":module-paging"))
     implementation(libs.androidx.appcompat)
     implementation(libs.android.material)
     testImplementation(libs.junit.junit)
