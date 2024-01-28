@@ -40,6 +40,7 @@ android {
 dependencies {
 
     implementation(project(":lib-framework"))
+    implementation(libs.squareup.okhttp3)
 
     implementation(libs.androidx.ktx)
     implementation(libs.androidx.appcompat)

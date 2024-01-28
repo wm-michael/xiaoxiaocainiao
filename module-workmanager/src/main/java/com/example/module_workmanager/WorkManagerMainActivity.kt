@@ -8,6 +8,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.module_workmanager.databinding.ActivityWorkManagerMainBinding
 import com.example.module_workmanager.demo0.WorkManager0Activity
 import com.example.module_workmanager.demo1.WorkManager1Activity
+import com.example.module_workmanager.demo2.WorkManager2Activity
 
 class WorkManagerMainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityWorkManagerMainBinding
@@ -20,7 +21,7 @@ class WorkManagerMainActivity : AppCompatActivity() {
         val layoutManager = LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rv.layoutManager = layoutManager
 
-        val examples = arrayOf("once alert", "upload userinfo")
+        val examples = arrayOf("once alert", "upload userinfo","download image, blur image")
         val adapter = CustomAdapter(examples)
         adapter.setOnItemClickListener { _, position ->
             when (position) {
@@ -36,6 +37,14 @@ class WorkManagerMainActivity : AppCompatActivity() {
                     val intent = Intent(
                         baseContext,
                         WorkManager1Activity::class.java
+                    )
+                    startActivity(intent)
+                }
+
+                2 -> {
+                    val intent = Intent(
+                        baseContext,
+                        WorkManager2Activity::class.java
                     )
                     startActivity(intent)
                 }
